@@ -4,9 +4,10 @@
 }
 
 body {
-  color: yellow
+  color: blue;
+  font-size: 40px
 }
 
-#app {
-  background-color: pink;
+.active {
+  border: 2px solid red;
 }
