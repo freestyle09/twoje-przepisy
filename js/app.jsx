@@ -6,6 +6,7 @@ import { NotFound } from "./components/NotFound";
 import { Add } from "./components/Main";
 import { Navigation } from "./components/Navigation";
 import { About } from "./components/About";
+import { Header } from "./components/Header";
 import "../scss/style.scss";
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
     return (
       <HashRouter>
         <div>
+          <div className="bgImage" />
+          <Header />
           <Navigation />
           <Switch>
             {/*<Redirect from="/" to="/lista-przepisow" />*/}
