@@ -41,8 +41,8 @@ body {
   height: 100vh;
   background-image: url("../images/eat-2378726_1920.jpg");
   background-size: cover;
-  filter: sepia(.7) brightness(70%);
-  -webkit-filter: sepia(.7) brightness(70%);
+  filter: sepia(0.7) brightness(70%);
+  -webkit-filter: sepia(0.7) brightness(70%);
   z-index: -1;
 }
 nav {
@@ -61,14 +61,13 @@ nav {
     a {
       color: $white;
       text-decoration: none;
-      transition: .2s;
+      transition: 0.2s;
       text-shadow: $shadow;
       &:hover {
         color: $color-header;
       }
     }
   }
-
 }
 
 .active {
@@ -79,18 +78,34 @@ nav {
   margin: 40px 0;
   background-image: url("../images/papyrus.png");
   background-size: cover;
-  -webkit-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.5);
-  -moz-box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.5);
-  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
 }
 
 .list {
   padding: 50px;
-  height: 1000px;
-  h1
+  height: 500px;
+  .category-title {
+    display: flex;
+    justify-content: center;
+    font: {
+      family: $font-montello;
+      size: 40px;
+    }
+    color: $white;
+    text: {
+      transform: uppercase;
+      shadow: $shadow;
+    }
+  }
 }
 
 footer {
   display: flex;
   justify-content: center;
+  padding: 50px;
+  color: $white;
+  font-family: $font-menu;
+  text-shadow: $shadow;
 }

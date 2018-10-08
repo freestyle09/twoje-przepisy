@@ -11,13 +11,20 @@
   url('../fonts/stylish-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-
+}
+@font-face {
+  font-family: 'montello_demoregular';
+  src: url('../fonts/montello_demo-webfont.woff2') format('woff2'),
+  url('../fonts/montello_demo-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 $font-header: 'amigosregular', serif;
 $font-menu: 'stylishregular', serif;
+$font-montello: 'montello_demoregular', serif;
 
-$shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+$shadow: 2px 2px 3px rgba(0, 0, 0, .6);
 
 
 // Colors
