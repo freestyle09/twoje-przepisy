@@ -99,6 +99,23 @@ nav {
       shadow: $shadow;
     }
   }
+  .recipe-title {
+    color: $white;
+    text-shadow: $shadow;
+    font: {
+      family: $font-dosis;
+      size: 26px;
+      weight: 600;
+    }
+    &:nth-child(odd) {
+      color: $color-header
+    }
+    span {
+      width: 30px;
+      display: inline-block;
+      text-align: center;
+    }
+  }
 }
 
 footer {
@@ -109,3 +126,5 @@ footer {
   font-family: $font-menu;
   text-shadow: $shadow;
 }
+
+

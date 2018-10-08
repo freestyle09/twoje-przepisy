@@ -13,8 +13,29 @@ import "../scss/style.scss";
 document.addEventListener("DOMContentLoaded", function() {
   class Home extends React.Component {
     render() {
+      // return (
+      //   <div>
+      //     Hi
+      //     {this.state.myArray.map(el => (
+      //       <p>{el}</p>
+      //     ))}
+      //   </div>
+      // );
       return <Redirect to="/lista-przepisow" />;
     }
+    // componentDidMount() {
+    //   fetch("https://jsonplaceholder.typicode.com/users")
+    //     .then(resp => resp.json())
+    //     .then(id => {
+    //       let tempArray = [];
+    //       for (let el of id) {
+    //         tempArray.push(el.name)
+    //       }
+    //         this.setState({
+    //             myArray: tempArray
+    //         })
+    //     });
+    // }
   }
 
   const App = () => {
