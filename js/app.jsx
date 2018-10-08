@@ -1,32 +1,40 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import { List } from "./components/List";
-import { NotFound } from "./components/NotFound";
-import { Add } from "./components/Main";
-import { Navigation } from "./components/Navigation";
-import { About } from "./components/About";
-import { Header } from "./components/Header";
+import {HashRouter, Route, Switch, Redirect} from "react-router-dom";
+import {List} from "./components/List";
+import {NotFound} from "./components/NotFound";
+import {Add} from "./components/Main";
+import {Navigation} from "./components/Navigation";
+import {About} from "./components/About";
+import {Header} from "./components/Header";
 import "../scss/style.scss";
 
-document.addEventListener("DOMContentLoaded", function() {
-  const App = () => {
-    return (
-      <HashRouter>
-        <div>
-          <div className="bgImage" />
-          <Header />
-          <Navigation />
-          <Switch>
-            {/*<Redirect from="/" to="/lista-przepisow" />*/}
-            <Route path="/lista-przepisow" component={List} />
-            <Route path="/dodaj-przepis" component={Add} />
-            <Route path="/o-aplikacji" component={About} />
-            <Route path="*" component={NotFound} />
-          </Switch>
-        </div>
-      </HashRouter>
-    );
-  };
-  ReactDOM.render(<App />, document.getElementById("app"));
+document.addEventListener("DOMContentLoaded", function () {
+    class Home extends React.Component {
+        render() {
+            return (
+                <Redirect to='/lista-przepisow'/>
+            );
+        }
+    }
+
+    const App = () => {
+        return (
+            <HashRouter>
+                <div>
+                    <div className="bgImage"/>
+                    <Header/>
+                    <Navigation/>
+                    <Switch>
+                        <Route exact path='/' component={Home}/>
+                        <Route path="/lista-przepisow" component={List}/>
+                        <Route path="/dodaj-przepis" component={Add}/>
+                        <Route path="/o-aplikacji" component={About}/>
+                        <Route path="*" component={NotFound}/>
+                    </Switch>
+                </div>
+            </HashRouter>
+        );
+    };
+    ReactDOM.render(<App/>, document.getElementById("app"));
 });
