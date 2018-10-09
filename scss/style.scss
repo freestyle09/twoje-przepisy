@@ -151,6 +151,9 @@ nav {
   .recipe-steps {
     width: 70%;
     .step-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font: {
         family: $font-lora;
       }
@@ -159,6 +162,12 @@ nav {
       box-shadow: $shadow;
       border-radius: 5px;
       background-color: $white;
+    }
+    .agree {
+      padding: 5px;
+      background-color: green;
+      color: $white;
+      border-radius: 5px;
     }
     .step-description {
       background-color: rgba(255, 255, 255, 0.6);
@@ -184,6 +193,7 @@ nav {
     }
     .step-active {
       background-color: green;
+      color: $white
     }
   }
   .h3 {

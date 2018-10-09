@@ -33,8 +33,15 @@ class Steps extends React.Component {
   }
 
   showDesc = e => {
-    e.target.nextElementSibling.classList.toggle("step-description-show");
+    if (e.target.nodeName !== "BUTTON") {
+      e.target.nextElementSibling.classList.toggle("step-description-show");
+    }
   };
+
+  markAsAgreed = (e) => {
+      e.target.parentElement.classList.add('step-active');
+      e.target.parentElement.nextElementSibling.classList.add('step-active');
+  }
 
   render() {
     return (
@@ -45,6 +52,7 @@ class Steps extends React.Component {
             <div key={el.id}>
               <div onClick={this.showDesc} className="step-title">
                 Krok {el.id} - {el.name}
+                <button onClick={this.markAsAgreed} className='agree'>Zatwierdź</button>
               </div>
               <div className="step-description">{el.description}</div>
             </div>
@@ -52,6 +60,11 @@ class Steps extends React.Component {
         })}
       </div>
     );
+  }
+  componentDidUpdate() {
+      let step = document.querySelector('.step-title');
+      console.log(step);
+
   }
 }
 
