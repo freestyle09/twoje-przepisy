@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+@import url('https://fonts.googleapis.com/css?family=Lora');
 
 @font-face {
   font-family: 'amigosregular';
@@ -14,18 +16,12 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'montello_demoregular';
-  src: url('../fonts/montello_demo-webfont.woff2') format('woff2'),
-  url('../fonts/montello_demo-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
 
 $font-header: 'amigosregular', serif;
 $font-menu: 'stylishregular', serif;
-$font-montello: 'montello_demoregular', serif;
+$font-kaushan: 'Kaushan Script', cursive;
 $font-dosis: 'Dosis', sans-serif;
+$font-lora: 'Lora', serif;
 
 $shadow: 2px 2px 3px rgba(0, 0, 0, .6);
 

@@ -14,6 +14,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  .header{
+    a {
+      text-decoration: none;
+    }
+  }
   .h1 {
     margin: 50px;
     font: {
@@ -75,7 +80,7 @@ nav {
 }
 
 .papyrus {
-  margin: 40px 0;
+  margin-top: 50px;
   background-image: url("../images/papyrus.png");
   background-size: cover;
   -webkit-box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
@@ -84,13 +89,14 @@ nav {
 }
 
 .list {
-  padding: 50px;
-  height: 500px;
+  padding: 0 50px;
+  min-height: 500px;
   .category-title {
+    padding: 50px 0;
     display: flex;
     justify-content: center;
     font: {
-      family: $font-montello;
+      family: $font-kaushan;
       size: 40px;
     }
     color: $white;
@@ -101,20 +107,57 @@ nav {
   }
   .recipe-title {
     color: $white;
-    text-shadow: $shadow;
+    text: {
+      decoration: none;
+      shadow: $shadow;
+    }
+    display: block;
+
     font: {
       family: $font-dosis;
       size: 26px;
       weight: 600;
     }
     &:nth-child(odd) {
-      color: $color-header
+      color: $color-header;
     }
     span {
       width: 30px;
       display: inline-block;
       text-align: center;
     }
+  }
+}
+
+.recipe-container {
+  display: flex;
+  .recipe-components {
+    width: 30%;
+    .component {
+      font: {
+        family: $font-lora;
+      }
+      padding: 5px;
+      margin-top: 10px;
+      box-shadow: $shadow;
+      border-radius: 5px;
+      background-color: $white;
+      width: 80%;
+      .component-item {
+        padding: 5px 10px;
+      }
+    }
+  }
+  .recipe-steps {
+    width: 70%;
+  }
+  .h3 {
+    font: {
+      family: $font-kaushan;
+      size: 24px;
+    }
+    text-shadow: $shadow;
+    color: $white
   }
 }
 
@@ -126,5 +169,3 @@ footer {
   font-family: $font-menu;
   text-shadow: $shadow;
 }
-
-

@@ -1,34 +1,38 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import recipesService from "../services/recipes.service";
 
 export class List extends React.Component {
-  url = "http://localhost:3000/recipes";
-  recipesArr = [];
   constructor(props) {
     super(props);
     this.state = {
       recipes: []
     };
   }
+
   render() {
     return (
       <div className="list">
         <h1 className="category-title">Moje Przepisy</h1>
 
-          {this.state.recipes.map((el,index) => <div className='recipe-title' key={el.id}> <span>{index + 1}.</span> {el.name}</div>)}
-
+        {this.state.recipes.map((el, index) => (
+          <NavLink
+            to={"/lista-przepisow/" + el.slug}
+            className="recipe-title"
+            key={el.id}
+          >
+            {" "}
+            <span>{index + 1}.</span> {el.name}
+          </NavLink>
+        ))}
       </div>
     );
   }
   componentDidMount() {
-    fetch(this.url)
-      .then(resp => resp.json())
-      .then(data => {
-          for(let el of data) {
-              this.recipesArr.push(el);
-          }
-          this.setState({
-              recipes: this.recipesArr
-          })
+    recipesService.then(data => {
+      this.setState({
+        recipes: data
       });
+    });
   }
 }

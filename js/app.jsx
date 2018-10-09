@@ -7,35 +7,15 @@ import { Add } from "./components/Add";
 import { Navigation } from "./components/Navigation";
 import { About } from "./components/About";
 import { Header } from "./components/Header";
+import { Recipe } from "./components/Recipe";
 import { Footer } from "./components/Footer";
 import "../scss/style.scss";
 
 document.addEventListener("DOMContentLoaded", function() {
   class Home extends React.Component {
     render() {
-      // return (
-      //   <div>
-      //     Hi
-      //     {this.state.myArray.map(el => (
-      //       <p>{el}</p>
-      //     ))}
-      //   </div>
-      // );
       return <Redirect to="/lista-przepisow" />;
     }
-    // componentDidMount() {
-    //   fetch("https://jsonplaceholder.typicode.com/users")
-    //     .then(resp => resp.json())
-    //     .then(id => {
-    //       let tempArray = [];
-    //       for (let el of id) {
-    //         tempArray.push(el.name)
-    //       }
-    //         this.setState({
-    //             myArray: tempArray
-    //         })
-    //     });
-    // }
   }
 
   const App = () => {
@@ -50,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <div className="papyrus">
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route path="/lista-przepisow/:id" component={Recipe} />
               <Route path="/lista-przepisow" component={List} />
               <Route path="/dodaj-przepis" component={Add} />
               <Route path="/o-aplikacji" component={About} />

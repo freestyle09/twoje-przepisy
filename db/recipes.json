@@ -3,10 +3,16 @@
     {
       "id": 1,
       "name": "Lasagne góralskie",
+      "slug": "lasagne-góralskie",
       "steps": [
         {
           "id": 1,
           "name": "Uwarz zupe ciulu",
+          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+        },
+        {
+          "id": 2,
+          "name": "Uwarz zupe ciulu razy 2",
           "description": "Włóż 2kg stuki do gorka i warz az wykipi"
         }
       ],
@@ -21,6 +27,7 @@
     {
       "id": 2,
       "name": "Boczek z kiskom",
+      "slug": "boczek-z-kiskom",
       "steps": [
         {
           "id": 1,
@@ -31,14 +38,19 @@
       "components": [
         {
           "id": 1,
-          "name": "sól",
+          "name": "Pieprz",
           "amount": "15g"
+        },{
+          "id": 2,
+          "name": "Sos pomidorowy",
+          "amount": "2 litry"
         }
       ]
     },
     {
       "id": 3,
       "name": "Flaki z olejem",
+      "slug": "flaki-z-olejem",
       "steps": [
         {
           "id": 1,
@@ -57,6 +69,7 @@
     {
       "id": 4,
       "name": "Skwarki na maśle",
+      "slug": "skwarki-na-maśle",
       "steps": [
         {
           "id": 1,
