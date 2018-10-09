@@ -28,7 +28,8 @@ class Steps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      show: false
+      show: false,
+      div: []
     };
   }
 
@@ -38,21 +39,24 @@ class Steps extends React.Component {
     }
   };
 
-  markAsAgreed = (e) => {
-      e.target.parentElement.classList.add('step-active');
-      e.target.parentElement.nextElementSibling.classList.add('step-active');
-  }
+  markAsAgreed = e => {
+    e.target.parentElement.classList.add("step-active");
+    e.target.parentElement.nextElementSibling.classList.add("step-active");
+  };
 
   render() {
     return (
       <div className="recipe-steps">
+
         <h3 className="h3">Sposób przygotowania:</h3>
         {this.props.steps.map(el => {
           return (
             <div key={el.id}>
               <div onClick={this.showDesc} className="step-title">
                 Krok {el.id} - {el.name}
-                <button onClick={this.markAsAgreed} className='agree'>Zatwierdź</button>
+                {/*<button onClick={this.markAsAgreed} className="agree">*/}
+                {/*Zatwierdź*/}
+                {/*</button>*/}
               </div>
               <div className="step-description">{el.description}</div>
             </div>
@@ -61,10 +65,18 @@ class Steps extends React.Component {
       </div>
     );
   }
-  componentDidUpdate() {
-      let step = document.querySelector('.step-title');
-      console.log(step);
 
+  componentDidUpdate() {
+
+  }
+
+  componentDidMount() {
+      this.id = setTimeout(() => {
+          this.tempArr.push(document.querySelectorAll(".step-title:not(.step-active)"));
+          this.setState({
+              div: [...this.tempArr]
+          })
+      },100)
   }
 }
 
@@ -77,6 +89,7 @@ export class Recipe extends React.Component {
       components: []
     };
   }
+
   render() {
     return (
       <div>
