@@ -23,7 +23,7 @@ export class Recipe extends React.Component {
                   <div className="component">
                     {this.state.components.map(el => {
                       return (
-                        <div className="component-item">
+                        <div key={el.id} className="component-item">
                           {el.name} {el.amount}
                         </div>
                       );
@@ -35,9 +35,9 @@ export class Recipe extends React.Component {
                   <div>
                     {this.state.steps.map(el => {
                       return (
-                        <div>
-                          <div>{el.name}</div>
-                          <div>{el.description}</div>
+                        <div key={el.id}>
+                          <div className='recipe-step-title'>{el.name}</div>
+                          <div className='recipe-step-description'>{el.description}</div>
                         </div>
                       );
                     })}

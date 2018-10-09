@@ -44,6 +44,10 @@
           "id": 2,
           "name": "Sos pomidorowy",
           "amount": "2 litry"
+        },{
+          "id": 3,
+          "name": "Makaron lasagne z firmy vileda",
+          "amount": "2 opakowania 50g"
         }
       ]
     },
