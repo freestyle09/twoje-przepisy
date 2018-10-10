@@ -99,8 +99,6 @@ class Steps extends React.Component {
     }, 1000);
   };
 
-  setTimer = e => {};
-
   render() {
     return (
       <div className="recipe-steps">
