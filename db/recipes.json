@@ -8,7 +8,8 @@
         {
           "id": 1,
           "name": "Step 1",
-          "description": "description 1"
+          "description": "description 1",
+          "timer": 50000
         },
         {
           "id": 2,

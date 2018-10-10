@@ -35,7 +35,9 @@ class Steps extends React.Component {
     };
   }
 
-  audio = new Audio("http://soundbible.com/grab.php?id=1063&type=mp3");
+  audio = new Audio(
+    "https://freesound.org/data/previews/186/186719_105499-lq.mp3"
+  );
 
   showDesc = e => {
     if (e.target.nodeName !== "BUTTON" && e.target.id !== "timer") {
@@ -44,8 +46,10 @@ class Steps extends React.Component {
   };
 
   markAsAgreed = e => {
+    clearInterval(this.id);
     this.setState({
-      id: this.state.id + 1
+      id: this.state.id + 1,
+      timer: false
     });
     e.target.parentElement.classList.add("step-active");
     e.target.parentElement.nextElementSibling.classList.add(
@@ -55,6 +59,7 @@ class Steps extends React.Component {
 
   startCountingDown = e => {
     let div = e.target.parentElement.parentElement;
+    e.target.disabled = true;
 
     this.setState({
       timer: e.target.parentElement.dataset.timer
@@ -69,11 +74,12 @@ class Steps extends React.Component {
             this.audio.loop = true;
             swal({
               title: "Zrobione!",
-              text: "Do you want to continue",
+              text: "Przejdź do następnego kroku",
               type: "success",
               onOpen: this.audio.play(),
               onClose: () => {
                 this.audio.pause();
+                this.audio.currentTime = 0;
               },
               confirmButtonText: "Zakończ"
             });

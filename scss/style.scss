@@ -119,8 +119,16 @@ nav {
       size: 26px;
       weight: 600;
     }
+    transition: .5s;
+    &:hover {
+      color: #87AEF5
+    }
     &:nth-child(odd) {
       color: $color-header;
+      transition: .5s;
+      &:hover {
+        color: #87AEF5
+      }
     }
     span {
       width: 30px;
@@ -178,6 +186,17 @@ nav {
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
+      transition: .5s;
+      &:hover {
+        background-color: $color-header;
+        color: black;
+        cursor: pointer;
+      }
+      &:disabled {
+        color: white;
+        background-color: $color-header;
+        cursor: wait;
+      }
     }
     .step-description {
       background-color: rgba(255, 255, 255, 0.6);
