@@ -24,6 +24,8 @@
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-router-dom": "^4.3.1",
+    "sweetalert2": "^7.28.4",
+    "sweetalert2-react-content": "^1.0.1",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

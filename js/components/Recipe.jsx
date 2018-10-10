@@ -1,5 +1,6 @@
 import React from "react";
 import recipesService from "../services/recipes.service";
+import swal from "sweetalert2";
 
 class Component extends React.Component {
   constructor(props) {
@@ -65,7 +66,19 @@ class Steps extends React.Component {
         },
         () => {
           if (this.state.timer === 0) {
-            alert("hej", this.audio.play());
+            this.audio.loop = true;
+            swal({
+              title: "Zrobione!",
+              text: "Do you want to continue",
+              type: "success",
+              onOpen: this.audio.play(),
+              onClose: () => {
+                this.audio.pause();
+              },
+              confirmButtonText: "Zakończ"
+            });
+
+            // alert("hej", this.audio.play());
             div.classList.add("step-active");
             div.nextElementSibling.classList.add("step-active-description");
             // this.audio.loop(true)
