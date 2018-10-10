@@ -7,23 +7,25 @@
       "steps": [
         {
           "id": 1,
-          "name": "Uwarz zupe ciulu",
-          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+          "name": "Step 1",
+          "description": "description 1"
         },
         {
           "id": 2,
-          "name": "Uwarz zupe ciulu razy 2",
-          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+          "name": "Step 2",
+          "description": "description 2",
+          "timer": 6000
         },
         {
           "id": 3,
-          "name": "Uwarz zupe ciulu razy 2",
-          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+          "name": "Step 3",
+          "description": "description 3"
         },
         {
           "id": 4,
-          "name": "Uwarz zupe ciulu razy 2",
-          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+          "name": "Step 4",
+          "description": "description 4",
+          "timer": 50000
         }
       ],
       "components": [

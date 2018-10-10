@@ -29,12 +29,15 @@ class Steps extends React.Component {
     super(props);
     this.state = {
       show: false,
-      id: 1
+      id: 1,
+      timer: false
     };
   }
 
+  audio = new Audio("http://soundbible.com/grab.php?id=1063&type=mp3");
+
   showDesc = e => {
-    if (e.target.nodeName !== "BUTTON") {
+    if (e.target.nodeName !== "BUTTON" && e.target.id !== "timer") {
       e.target.nextElementSibling.classList.toggle("step-description-show");
     }
   };
@@ -44,8 +47,40 @@ class Steps extends React.Component {
       id: this.state.id + 1
     });
     e.target.parentElement.classList.add("step-active");
-    e.target.parentElement.nextElementSibling.classList.add("step-active-description");
+    e.target.parentElement.nextElementSibling.classList.add(
+      "step-active-description"
+    );
   };
+
+  startCountingDown = e => {
+    let div = e.target.parentElement.parentElement;
+
+    this.setState({
+      timer: e.target.parentElement.dataset.timer
+    });
+    this.id = setInterval(() => {
+      this.setState(
+        {
+          timer: +this.state.timer - 1000
+        },
+        () => {
+          if (this.state.timer === 0) {
+            alert("hej", this.audio.play());
+            div.classList.add("step-active");
+            div.nextElementSibling.classList.add("step-active-description");
+            // this.audio.loop(true)
+
+            this.setState({
+              id: this.state.id + 1
+            });
+            clearInterval(this.id);
+          }
+        }
+      );
+    }, 1000);
+  };
+
+  setTimer = e => {};
 
   render() {
     return (
@@ -56,10 +91,27 @@ class Steps extends React.Component {
             <div key={el.id}>
               <div onClick={this.showDesc} className="step-title">
                 Krok {el.id} - {el.name}
+                {el.timer &&
+                  this.state.id === el.id && (
+                    <div data-timer={el.timer} id="timer">
+                      {!this.state.timer
+                        ? el.timer / 1000
+                        : this.state.timer / 1000}{" "}
+                      sekund
+                      <button
+                        onClick={this.startCountingDown}
+                        className="agree"
+                      >
+                        Start
+                      </button>
+                    </div>
+                  )}
                 <button
+                  ref={el => (this.button = el)}
                   onClick={this.markAsAgreed}
                   className={this.state.id !== el.id ? "disabled" : "agree"}
-                >Potwierdź
+                >
+                  Potwierdź
                 </button>
               </div>
 
@@ -70,8 +122,11 @@ class Steps extends React.Component {
       </div>
     );
   }
-  componentDidMount() {
 
+  componentWillUpdate() {}
+
+  componentWillUnmount() {
+    clearInterval(this.id);
   }
 }
 
