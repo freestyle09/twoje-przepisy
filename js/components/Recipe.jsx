@@ -29,7 +29,7 @@ class Steps extends React.Component {
     super(props);
     this.state = {
       show: false,
-      div: []
+      id: 1
     };
   }
 
@@ -40,24 +40,29 @@ class Steps extends React.Component {
   };
 
   markAsAgreed = e => {
+    this.setState({
+      id: this.state.id + 1
+    });
     e.target.parentElement.classList.add("step-active");
-    e.target.parentElement.nextElementSibling.classList.add("step-active");
+    e.target.parentElement.nextElementSibling.classList.add("step-active-description");
   };
 
   render() {
     return (
       <div className="recipe-steps">
-
         <h3 className="h3">Sposób przygotowania:</h3>
         {this.props.steps.map(el => {
           return (
             <div key={el.id}>
               <div onClick={this.showDesc} className="step-title">
                 Krok {el.id} - {el.name}
-                {/*<button onClick={this.markAsAgreed} className="agree">*/}
-                {/*Zatwierdź*/}
-                {/*</button>*/}
+                <button
+                  onClick={this.markAsAgreed}
+                  className={this.state.id !== el.id ? "disabled" : "agree"}
+                >Potwierdź
+                </button>
               </div>
+
               <div className="step-description">{el.description}</div>
             </div>
           );
@@ -65,18 +70,8 @@ class Steps extends React.Component {
       </div>
     );
   }
-
-  componentDidUpdate() {
-
-  }
-
   componentDidMount() {
-      this.id = setTimeout(() => {
-          this.tempArr.push(document.querySelectorAll(".step-title:not(.step-active)"));
-          this.setState({
-              div: [...this.tempArr]
-          })
-      },100)
+
   }
 }
 

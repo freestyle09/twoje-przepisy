@@ -14,6 +14,16 @@
           "id": 2,
           "name": "Uwarz zupe ciulu razy 2",
           "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+        },
+        {
+          "id": 3,
+          "name": "Uwarz zupe ciulu razy 2",
+          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
+        },
+        {
+          "id": 4,
+          "name": "Uwarz zupe ciulu razy 2",
+          "description": "Włóż 2kg stuki do gorka i warz az wykipi"
         }
       ],
       "components": [
@@ -40,11 +50,13 @@
           "id": 1,
           "name": "Pieprz",
           "amount": "15g"
-        },{
+        },
+        {
           "id": 2,
           "name": "Sos pomidorowy",
           "amount": "2 litry"
-        },{
+        },
+        {
           "id": 3,
           "name": "Makaron lasagne z firmy vileda",
           "amount": "2 opakowania 50g"
