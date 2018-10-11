@@ -119,15 +119,15 @@ nav {
       size: 26px;
       weight: 600;
     }
-    transition: .5s;
+    transition: 0.5s;
     &:hover {
-      color: #87AEF5
+      color: #87aef5;
     }
     &:nth-child(odd) {
       color: $color-header;
-      transition: .5s;
+      transition: 0.5s;
       &:hover {
-        color: #87AEF5
+        color: #87aef5;
       }
     }
     span {
@@ -186,7 +186,7 @@ nav {
       font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
-      transition: .5s;
+      transition: 0.5s;
       &:hover {
         background-color: $color-header;
         color: black;

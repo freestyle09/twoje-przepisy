@@ -1,5 +1,5 @@
 import React from "react";
-import recipesService from "../services/recipes.service";
+import {recipesService} from "../services/recipes.service";
 import swal from "sweetalert2";
 
 class Component extends React.Component {

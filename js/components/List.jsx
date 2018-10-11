@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import recipesService from "../services/recipes.service";
+import {recipesService} from "../services/recipes.service";
 
 export class List extends React.Component {
   constructor(props) {
@@ -29,6 +29,13 @@ export class List extends React.Component {
     );
   }
   componentDidMount() {
+    recipesService.then(data => {
+      this.setState({
+        recipes: data
+      });
+    });
+  }
+  componentWillUnmount() {
     recipesService.then(data => {
       this.setState({
         recipes: data
