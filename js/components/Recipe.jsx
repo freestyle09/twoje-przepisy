@@ -1,11 +1,13 @@
 import React from "react";
-import {recipesService} from "../services/recipes.service";
+import { reload } from "../services/recipes.service";
 import swal from "sweetalert2";
 
 class Component extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  // seconds = this.state.timer % 60;
 
   render() {
     return (
@@ -84,10 +86,8 @@ class Steps extends React.Component {
               confirmButtonText: "Zakończ"
             });
 
-            // alert("hej", this.audio.play());
             div.classList.add("step-active");
             div.nextElementSibling.classList.add("step-active-description");
-            // this.audio.loop(true)
 
             this.setState({
               id: this.state.id + 1
@@ -97,6 +97,12 @@ class Steps extends React.Component {
         }
       );
     }, 1000);
+  };
+
+  millisToMinutesAndSeconds = millis => {
+    let minutes = Math.floor(millis / 60000);
+    let seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   };
 
   render() {
@@ -112,9 +118,9 @@ class Steps extends React.Component {
                   this.state.id === el.id && (
                     <div data-timer={el.timer} id="timer">
                       {!this.state.timer
-                        ? el.timer / 1000
-                        : this.state.timer / 1000}{" "}
-                      sekund
+                        ? this.millisToMinutesAndSeconds(el.timer)
+                        : this.millisToMinutesAndSeconds(this.state.timer)}
+                      minut
                       <button
                         onClick={this.startCountingDown}
                         className="agree"
@@ -177,7 +183,7 @@ export class Recipe extends React.Component {
 
   componentDidMount() {
     //filter recipe
-    recipesService.then(data => {
+    reload().then(data => {
       this.setState(
         {
           recipe: data.filter(el => el.slug === this.props.match.params.id)

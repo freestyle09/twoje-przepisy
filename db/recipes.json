@@ -2,11 +2,12 @@
   "recipes": [
     {
       "id": 1,
-      "name": "Lasagne góralskie",
-      "slug": "lasagne-góralskie",
+      "name": "Lasagne",
+      "slug": "lasagne",
       "steps": [
         {
           "id": 1,
+          "recipeId": 1,
           "name": "Step 1",
           "description": "description 1",
           "timer": 50000
@@ -36,6 +37,77 @@
           "amount": "15g"
         }
       ]
+    },
+    {
+      "name": "Placki",
+      "slug": "placki",
+      "steps": [
+        {
+          "id": 1,
+          "name": "Obierz ziemniaki",
+          "description": "Obierz ziemniaki obieraczką"
+        },
+        {
+          "id": 2,
+          "name": "Zetrzyj ziemniaki",
+          "description": "Użyj do tego tarki"
+        },
+        {
+          "id": 3,
+          "name": "Dodaj składniki",
+          "description": "Dodaj mąkę jajko sól i starte ziemniaki i wymieszaj"
+        },
+        {
+          "id": 4,
+          "name": "Usmaż placki",
+          "description": "Smaż dopóki się zarumienią ",
+          "timer": 60000
+        }
+      ],
+      "components": [
+        {
+          "id": 1,
+          "name": "Mąka szklanka"
+        },
+        {
+          "id": 2,
+          "name": "Jajka 2szt."
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Jajecznica",
+      "slug": "jajecznica",
+      "steps": [
+        {
+          "id": 1,
+          "name": "Patelnia",
+          "description": "Postaw patelnie na palniku i zapal palnik"
+        },
+        {
+          "id": 2,
+          "name": "Wbij jajka",
+          "description": "Weź 2 jajka i wbij na rozgrzaną patelnię"
+        },
+        {
+          "id": 3,
+          "name": "Smaż",
+          "description": "Smaż wszystkie składniki i mieszaj aż upłynie czas",
+          "timer": 60000
+        }
+      ],
+      "components": [
+        {
+          "id": 1,
+          "name": "2 jajka"
+        },
+        {
+          "id": 2,
+          "name": "łyżka masła klarowanego"
+        }
+      ],
+      "id": 3
     }
   ]
 }

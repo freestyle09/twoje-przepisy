@@ -1,20 +1,23 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import {recipesService} from "../services/recipes.service";
+import { NavLink, Redirect } from "react-router-dom";
+import { recipesService, reload } from "../services/recipes.service";
 
 export class List extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      recipes: []
+      recipes: [],
+      redirect: ""
     };
   }
 
   render() {
+    if (this.state.redirect !== "") {
+      return <Redirect to={this.state.redirect} />;
+    }
     return (
       <div className="list">
         <h1 className="category-title">Moje Przepisy</h1>
-
         {this.state.recipes.map((el, index) => (
           <NavLink
             to={"/lista-przepisow/" + el.slug}
@@ -29,17 +32,19 @@ export class List extends React.Component {
     );
   }
   componentDidMount() {
-    recipesService.then(data => {
-      this.setState({
-        recipes: data
+    if (this.props.match.params.confirm === "true") {
+      reload().then(data => {
+        this.setState({
+          recipes: data,
+          redirect: "/"
+        });
       });
-    });
-  }
-  componentWillUnmount() {
-    recipesService.then(data => {
-      this.setState({
-        recipes: data
+    } else {
+      reload().then(data => {
+        this.setState({
+          recipes: data
+        });
       });
-    });
+    }
   }
 }

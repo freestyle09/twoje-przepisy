@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
           <div className="papyrus">
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route path="/lista-przepisow/:id" component={Recipe} />
-              <Route path="/lista-przepisow" component={List} />
+              <Route exact path="/lista-przepisow/refresh/:confirm" component={List} />
+              <Route exact path="/lista-przepisow/:id" component={Recipe} />
+              <Route exact path="/lista-przepisow" component={List} />
               <Route path="/dodaj-przepis" component={Add} />
               <Route path="/o-aplikacji" component={About} />
               <Route path="*" component={NotFound} />

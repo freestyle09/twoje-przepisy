@@ -1,5 +1,6 @@
 import React from "react";
 import { sendRecipe } from "../services/recipes.service";
+import { Redirect } from "react-router-dom";
 
 export class Add extends React.Component {
   constructor(props) {
@@ -15,6 +16,16 @@ export class Add extends React.Component {
   titleStep = e => {
     this.setState({
       [e.target.name]: e.target.value
+    });
+  };
+  checkboxTimer = e => {
+    this.setState({
+      [e.target.name]: e.target.checked
+    });
+  };
+  setTimer = e => {
+    this.setState({
+      [e.target.name]: e.target.value * 60000
     });
   };
   descriptionStep = e => {
@@ -43,6 +54,27 @@ export class Add extends React.Component {
                 name={"step" + i}
               />
             </label>
+
+            <label>
+              Czas ?
+              <input
+                type="checkbox"
+                onChange={this.checkboxTimer}
+                className="form-control"
+                name={"timer" + i}
+              />
+            </label>
+            {this.state["timer" + i] && (
+              <label>
+                Czas trwania czynności (minuty) :
+                <input
+                  type="number"
+                  className="form-control"
+                  name={"time" + i}
+                  onChange={this.setTimer}
+                />
+              </label>
+            )}
           </div>
           <div className="form-group">
             <label>
@@ -90,14 +122,15 @@ export class Add extends React.Component {
       let stepObj = {
         id: i,
         name: this.state[`step${i}`],
-        description: this.state[`description${i}`]
+        description: this.state[`description${i}`],
+        timer: this.state["time" + i]
       };
       steps.push(stepObj);
     }
 
     let components = [];
 
-    for (let i = 1; i < this.state.numberOfComponents; i++) {
+    for (let i = 1; i <= this.state.numberOfComponents; i++) {
       let compObj = {
         id: i,
         name: this.state[`component${i}`]
@@ -115,7 +148,11 @@ export class Add extends React.Component {
       components: components
     };
 
-    sendRecipe(obj);
+    sendRecipe(obj, () => {
+      this.setState({
+        redirect: "/lista-przepisow/refresh/true"
+      });
+    });
   };
 
   handleNameChange = e => {
@@ -139,6 +176,9 @@ export class Add extends React.Component {
     });
   };
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />;
+    }
     return (
       <div className="list">
         <h2 className="category-title">Dodaj przepis</h2>
