@@ -1,5 +1,5 @@
 # twoje-przepisy
-Aplikacja dla Twoich przepisów!
+Welcome to my app, where you can create your own cooking recipes and follow them step by step, even you can use your own set timer to turn on alarm when step is done. You don't want to burn the chicken, right? :) Alarm will be ringing until you won't close it.
 
 ## Future update
 
