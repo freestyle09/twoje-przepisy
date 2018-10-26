@@ -108,6 +108,44 @@
         }
       ],
       "id": 3
+    },
+    {
+      "name": "Spagethi",
+      "slug": "spagethi",
+      "steps": [
+        {
+          "id": 1,
+          "name": "Wymieszaj",
+          "description": "Drewnianą łyżką wymieszaj dokładnie!!!",
+          "timer": 60000
+        },
+        {
+          "id": 2,
+          "name": "Otwrórz mikrofale",
+          "description": "Otwórz i wrzuć"
+        },
+        {
+          "id": 3,
+          "name": "Jedz",
+          "description": "Smacznego",
+          "timer": 60000
+        }
+      ],
+      "components": [
+        {
+          "id": 1,
+          "name": "Sos"
+        },
+        {
+          "id": 2,
+          "name": "mięso"
+        },
+        {
+          "id": 3,
+          "name": "makaron"
+        }
+      ],
+      "id": 4
     }
   ]
 }
