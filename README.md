@@ -11,3 +11,19 @@ I want to create backend for this app to implement REST API. Actually app works 
 * Express
 * MongoDB
 * Update and Delete operations
+
+## If you want to check this app:
+
+Clone this repo and from root folder you need to start json-server
+
+```node
+json-server db/recipes.json
+```
+
+When you start json-server open new window in your terminal and write:
+
+```node
+npm run start
+```
+
+Enjoy it!

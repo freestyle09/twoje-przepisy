@@ -146,6 +146,96 @@
         }
       ],
       "id": 4
+    },
+    {
+      "name": "Parówki z wody",
+      "slug": "parówki-z-wody",
+      "steps": [
+        {
+          "id": 1,
+          "name": "Zagotuj wode",
+          "description": "Wlej wode do gorka i postow na ogniu"
+        },
+        {
+          "id": 2,
+          "name": "Obierz parówki",
+          "description": "Obierz parówki z flaka i wrzuć do gorka"
+        },
+        {
+          "id": 3,
+          "name": "Gotuj parówki",
+          "description": "Gotuj parówki aż nie skończy się czas :) i jedz",
+          "timer": 60000
+        }
+      ],
+      "components": [
+        {
+          "id": 1,
+          "name": "Woda 1 litr"
+        },
+        {
+          "id": 2,
+          "name": "Parówki 5 sztuk"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "name": "Babka ucierana",
+      "slug": "babka-ucierana",
+      "steps": [
+        {
+          "id": 1,
+          "name": "Ubij białko",
+          "description": "Ubijamy białko aż powstanie sztywna piana"
+        },
+        {
+          "id": 2,
+          "name": "Żółtka z cukrem utrzeć",
+          "description": "Utrzeć żółtka z cukrem aż powstanie masa"
+        },
+        {
+          "id": 3,
+          "name": "Włóż do pieca",
+          "description": "Włóż ciasto do pieca rozgrzanego do 180 stopni ",
+          "timer": 60000
+        }
+      ],
+      "components": [
+        {
+          "id": 1,
+          "name": "Mąka 90dag"
+        },
+        {
+          "id": 2,
+          "name": "10 jaj"
+        },
+        {
+          "id": 3,
+          "name": "Proszek do pieczenia"
+        },
+        {
+          "id": 4,
+          "name": "Cukier waniliowy"
+        },
+        {
+          "id": 5,
+          "name": "Cukier puder 1/2"
+        },
+        {
+          "id": 6,
+          "name": "Mleko 2 szklanki"
+        },
+        {
+          "id": 7,
+          "name": "Olej 2 szklanki"
+        },
+        {
+          "id": 8,
+          "name": "Kakao"
+        }
+      ],
+      "id": 6
     }
   ]
 }
