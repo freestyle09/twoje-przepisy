@@ -7,7 +7,7 @@ export interface AppState {}
 class App extends React.Component<AppProps, AppState> {
   state = {};
   render() {
-    return <div>Siema</div>;
+    return <div>Siema :)</div>;
   }
 }
 
