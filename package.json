@@ -2,11 +2,11 @@
   "name": "twoje-przepisy",
   "version": "1.0.0",
   "description": "Aplikacja dla Twoich przepisów!",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack-dev-server --colors --hot --inline --open"
+    "start": "nodemon app.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/freestyle09/twoje-przepisy#readme",
   "dependencies": {
     "@types/react": "^16.4.14",
+    "concurrently": "^4.1.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
     "react-router-dom": "^4.3.1",
